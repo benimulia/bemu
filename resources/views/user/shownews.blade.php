@@ -28,17 +28,17 @@
 
 <div class="news-wrap">
     <div class="container">
-        <div class="row">
+        <div class="row">        
             <div class="col-12 col-lg-8">
-                @foreach($news as $n)
                 <div class="news-content">
-                    <a href="/news/{{$n->id}}"><img src="{{url('uploads/'.$n->foto)}}" alt="" weight="730px" height="377.58"></a>
+                    <span> <a href="/news">&#8592 Kembali</a></span> <br> <br>
+                    <a href="#"><img src="{{url('uploads/'.$n->foto)}}" alt="" weight="730px" height="377.58"></a>
 
                     <header class="entry-header d-flex flex-wrap justify-content-between align-items-center">
                         <div class="header-elements">
                             <div class="posted-date">{{date('d M Y', $n->created_at->timestamp)}}</div>
 
-                            <h2 class="entry-title"><a href="/news/{{$n->id}}" style="text-decoration: none;">{{$n->judul}}</a></h2>
+                            <h2 class="entry-title"><a href="#">{{$n->judul}}</a></h2>
 
                             <div class="post-metas d-flex flex-wrap align-items-center">
                                 <span class="cat-links">in <a href="#">News</a></span>
@@ -48,19 +48,10 @@
                     </header>
 
                     <div class="entry-content">
-                        <p>{!!Str::words($n->isi, 100 , '...')!!}</p>
+                        <p>{{$n->isi}}</p>
                     </div>
-
-                    <footer class="entry-footer">
-                        <a href="/news/{{$n->id}}" class="btn gradient-bg">Read More</a>
-                    </footer>
                 </div>
                 <hr>
-                @endforeach
-
-                <ul class="pagination d-flex flex-wrap align-items-center p-0">
-                {{$news->links()}}
-                </ul>
             </div>
 
             <div class="col-12 col-lg-4">
@@ -77,7 +68,7 @@
 
                         <ul class="p-0">
                             <li class="d-flex flex-wrap justify-content-between align-items-center">
-                                <figure><a href="#"><img src="images/p-1.jpg" alt=""></a></figure>
+                                <figure><a href="#"><img src="{{images/p-1.jpg" alt=""></a></figure>
 
                                 <div class="entry-content">
                                     <h3 class="entry-title"><a href="#">A new cause to help</a></h3>

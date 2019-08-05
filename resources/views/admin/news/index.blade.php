@@ -44,9 +44,9 @@ News
                 <td>{{ $nw->keterangan}}</td>
                 <td>{{ $nw->isi}}</td>
                 <td>{{ date('d M Y - H:i:s', $nw->created_at->timestamp) }}</td>
-                <td><a href="adminnews/show/{{$nw->id}}">Show </a></td>
-                <td><a href="adminnews/edit/{{$nw->id}}">Edit </a></td>
-                <td><a href="adminnews/delete/{{$nw->id}}">Delete </a></td>
+                <td><button onclick="window.location.href='adminnews/show/{{$nw->id}}'" class="btn btn-outline-info"><span><i class="fas fa-eye"></i> <a href=""></a></span></button></td>
+                <td><button onclick="window.location.href='adminnews/edit/{{$nw->id}}'" class="btn btn-outline-success"><span><i class="fas fa-pencil-alt"></i></span></button></td>
+                <td><button class="btn btn-outline-danger" data-toggle="modal" data-target="#modalHapus"><span><i class="fa fa-trash" aria-hidden="true" style="color:red;"></i></span></button></td>
             </tr>
             @endforeach
         </tbody>
@@ -60,6 +60,26 @@ News
 </div>
 </div>
 
-
+<!-- Contoh Modal -->
+<div class="modal fade" id="modalHapus" tabindex="-1" role="dialog" aria-labelledby="modalSayaLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalSayaLabel">Konfirmasi</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Apakah data ingin dihapus???
+        <br/>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Kembali</button>
+        <button onclick="window.location.href='adminnews/delete/{{$nw->id}}'" type="button" class="btn btn-danger">Hapus</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 @endsection

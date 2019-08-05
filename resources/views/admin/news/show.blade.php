@@ -10,6 +10,7 @@ Detail News
 
 @section('content')
 <div class="container">
+<span> <a href="/adminnews">&#8592 Kembali</a></span>
 <div class="card mb-3">
           <div class="card-header">
             <h3>Judul : <b>{{$news->judul}}</b></h3><br/>

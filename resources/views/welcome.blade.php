@@ -116,7 +116,7 @@
             <div class="row">
                 <div class="coL-12">
                     <div class="section-heading">
-                        <h2 class="entry-title">News</h2>
+                        <a href="/news" style="text-decoration: none;"><h2 class="entry-title">News</h2></a>
                     </div><!-- .section-heading -->
                 </div><!-- .col -->
             </div><!-- .row -->
@@ -147,7 +147,7 @@
                                             <p class="m-0">{{$news->keterangan}}</p>
                                             <p class="m-0">{{$news->created_at->format('d, M Y ')}}</p>                                            
                                         </div><!-- .entry-content -->
-                                            <p>{{$news->isi}}</p>
+                                            <p>{!!Str::words($news->isi, 50 , '...')!!}</p>
                                         <div class="fund-raised w-100">
                                             
                                         </div><!-- .fund-raised -->

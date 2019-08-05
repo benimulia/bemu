@@ -19,12 +19,12 @@ class MainController extends Controller
     // FITUR NEWS
     public function news()
     {
-        $news = news::all();
+        $news = news::orderBy('created_at','DESC')->paginate(3);
         return view('user.news', array('news' =>$news, 'coba'=>$news));
     }
 
     public function showNews($id){
-        $news = news::Find($id);
-        return view('user.shownews',compact('news'));
+        $n = news::Find($id);
+        return view('user.shownews',compact('n'));
     }
 }

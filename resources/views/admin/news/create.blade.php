@@ -38,9 +38,6 @@ Create News
     <div class="form-group">
         <button class="btn btn-danger btn-sm"> Submit</button>
     </div>
-    <div class="form-group">
-        <button class="btn btn-danger btn-sm"><input type="reset"> Reset</button>
-    </div>
     
     </form>
 </div>

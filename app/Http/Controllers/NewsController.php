@@ -62,26 +62,23 @@ class NewsController extends Controller
         return view ('admin.news.edit',compact('news'));
     }
 
-    public function edit(Request $req, $id)
+    public function edit(Request $request, $id)
     {
         $news = news::Find($id);
-        $news ->judul = $req->input('judul');
-        $news ->keterangan = $req->input('keterangan');
-        $news ->isi = $req->input('isi');
-        if ($req->file('file') !=null){
-            if(!isset($req->foto))
-                    {
-                     $photo = Storage::disk('local')->delete($news->foto);
-                    }
-            $photo = $req->file('file');
-            $path = Storage::disk('local')->put('foto', $photo); //nama folder,file yang diinput
-        // $name = $photo->getClientOriginalName();
-        // $photo->move('foto',$name);
-            $news->foto = $path;
+        $news->judul = $request->input('judul');
+        $news->keterangan = $request->input('keterangan');
+        $news->isi = $request->input('isi');
+        if ($request->file('file') !=null){
+            $photo = $request->file('file');
+            $extension = $photo-> getClientOriginalExtension();
+            Storage::disk('public')->put($photo->getFileName().'.'.$extension, File::get($photo));
+            
+            $news->foto = $photo->getFileName().'.'.$extension;
         }
-
         $news->save();
-        return redirect('/adminnews');
+        
+       
+        return redirect('/adminnews')->with(['status' => 'News berhasil diedit']);
 
     }
 }
