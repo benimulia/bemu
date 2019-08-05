@@ -51,7 +51,7 @@ class NewsController extends Controller
     {
         $news = news::Find($id);
         // print_r($news->foto);exit;
-        $photo =Storage::disk('local')->delete($news->foto);
+        $photo =Storage::disk('public')->delete($news->foto);
         $news->delete();
         return redirect('/adminnews');
     }
