@@ -79,6 +79,11 @@
           <span>Organization</span></a>
       </li>
       <li class="nav-item">
+        <a class="nav-link" href="/adminevents">
+          <i class="fas fa-fw fa-calendar"></i>
+          <span>Events</span></a>
+      </li>
+      <li class="nav-item">
         <a class="nav-link" href="/kegiatan">
           <i class="fas fa-fw fa-images"></i>
           <span>Announcement</span></a>

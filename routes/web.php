@@ -38,7 +38,9 @@ Route::get('/adminnews/delete/{id}','newsController@delete')->middleware('auth')
 Route::get('/adminnews/edit/{id}','newsController@vedit')->middleware('auth');
 Route::post('/adminnews/edit/{id}','newsController@edit')->middleware('auth');
 
-
+//event
+Route::get('/adminevents','CalendarController@index')->middleware('auth');
+Route::get('/adminevents/create', 'CalendarController@create')->middleware('auth');
 
 
 //USER
