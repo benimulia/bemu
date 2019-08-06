@@ -9,7 +9,7 @@ News
 @endsection()
 
 @section('content')
-
+@if(!$news->isEmpty())
 <div class="card mb-3">
           <div class="card-header">
             <i class="fas fa-table"></i>
@@ -42,7 +42,7 @@ News
                 <td>{{ $nw->id }}</td>
                 <td>{{ $nw->judul}}</td>
                 <td>{{ $nw->keterangan}}</td>
-                <td>{{ $nw->isi}}</td>
+                <td>{!!Str::words($nw->isi, 50 , '...')!!}</td>
                 <td>{{ date('d M Y - H:i:s', $nw->created_at->timestamp) }}</td>
                 <td><button onclick="window.location.href='adminnews/show/{{$nw->id}}'" class="btn btn-outline-info"><span><i class="fas fa-eye"></i> <a href=""></a></span></button></td>
                 <td><button onclick="window.location.href='adminnews/edit/{{$nw->id}}'" class="btn btn-outline-success"><span><i class="fas fa-pencil-alt"></i></span></button></td>
@@ -81,5 +81,11 @@ News
     </div>
   </div>
 </div>
+@else
+<a href="/adminnews/create">
+<button class="btn btn-info" id="sidebarToggle">
+    <i class="far fa-plus-square"> Tambah News</i>
+</button></a>
+@endif
 
 @endsection

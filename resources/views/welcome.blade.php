@@ -134,7 +134,7 @@
                                         <img src="{{ url('uploads/'.$news->foto) }}" alt="{{$news->foto}}" height="212px" >
 
                                         <div class="figure-overlay d-flex justify-content-center align-items-center position-absolute w-100 h-100">
-                                            <a href="#" class="btn gradient-bg mr-2">Read More</a>
+                                            <a href="/news/{{$news->id}}" class="btn gradient-bg mr-2">Read More</a>
                                         </div><!-- .figure-overlay -->
                                     </figure>
 
@@ -147,8 +147,9 @@
                                             <p class="m-0">{{$news->keterangan}}</p>
                                             <p class="m-0">{{$news->created_at->format('d, M Y ')}}</p>                                            
                                         </div><!-- .entry-content -->
-                                            <p>{!!Str::words($news->isi, 50 , '...')!!}</p>
+                                            <p>{!!Str::words($news->isi, 20 , '...')!!}</p>
                                         <div class="fund-raised w-100">
+                                        <a href="/news/{{$news->id}}">Read More</a>
                                             
                                         </div><!-- .fund-raised -->
                                     </div><!-- .cause-content-wrap -->

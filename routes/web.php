@@ -15,6 +15,8 @@ Route::get('/','MainController@utama') ;
 
 Auth::routes();
 
+//Verifikasi Email
+Auth::routes(['verify' => true]);
 
 //ADMIN
 //Routing Ke Halaman Login
@@ -27,7 +29,7 @@ Route::get('/bemuregister', function(){
     });
 
 Route::get('/dashboard', function()
-{return view('layouts.adminlayout');})->middleware('auth');
+{return view('layouts.adminlayout');})->middleware('auth','verified');
 
 //news
 Route::get('/adminnews','newsController@index')->middleware('auth');
