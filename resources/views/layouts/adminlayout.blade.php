@@ -84,7 +84,7 @@
           <span>Events</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/kegiatan">
+        <a class="nav-link" href="/adminannouncements">
           <i class="fas fa-fw fa-images"></i>
           <span>Announcement</span></a>
       </li>

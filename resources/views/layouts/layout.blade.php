@@ -59,7 +59,7 @@
                 <div class="row">
                     <div class="col-12 d-flex flex-wrap justify-content-between align-items-center">
                         <div class="site-branding d-flex align-items-center">
-                           <a class="d-block" href="/" rel="home"><img class="d-block" height="30px" src="images/BEMU.png" alt="logo"></a>
+                           <a class="d-block" href="/" rel="home"><img class="d-block" height="30px" src="{{asset('images/BEMU.png')}}" alt="logo"></a>
                         </div><!-- .site-branding -->
 
                         @yield('nav')

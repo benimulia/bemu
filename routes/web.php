@@ -44,7 +44,21 @@ Route::post('/adminnews/edit/{id}','newsController@edit')->middleware('auth');
 Route::get('/adminevents','CalendarController@index')->middleware('auth');
 Route::get('/adminevents/create', 'CalendarController@create')->middleware('auth');
 
+//news
+Route::get('/adminannouncements','announcementsController@index')->middleware('auth');
+Route::get('/adminannouncements/show/{id}','announcementsController@Show')->middleware('auth');
+Route::get('/adminannouncements/create','announcementsController@vcreate')->middleware('auth');
+Route::post('/adminannouncements/create', 'announcementsController@create')->middleware('auth');
+Route::get('/adminannouncements/delete/{id}','announcementsController@delete')->middleware('auth');
+Route::get('/adminannouncements/edit/{id}','announcementsController@vedit')->middleware('auth');
+Route::post('/adminannouncements/edit/{id}','announcementsController@edit')->middleware('auth');
+
+
+///////////////////////////////////////////////////////////////////////////////////////
 
 //USER
 Route::get('/news','MainController@news');
 Route::get('/news/{id}','MainController@showNews');
+
+Route::get('/announcements','MainController@announcements');
+Route::get('/announcements/{id}','MainController@showAnnouncements');

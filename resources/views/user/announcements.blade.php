@@ -5,7 +5,7 @@
     <ul class="d-flex flex-column flex-lg-row justify-content-lg-end align-content-center">
         <li><a href="/">Home</a></li>
         <li><a href="about.html">About us</a></li>
-        <li class="current-menu-item"><a href="/news">News</a></li>
+        <li><a href="/news">News</a></li>
         <li><a href="portfolio.html">Organization</a></li>
         <li><a href="news.html">Download Center</a></li>
         <li><a href="contact.html">Contact</a></li>
@@ -20,7 +20,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h1>News</h1>
+                <h1>Announcements</h1>
             </div><!-- .col -->
         </div><!-- .row -->
     </div><!-- .container -->
@@ -28,30 +28,38 @@
 
 <div class="news-wrap">
     <div class="container">
-        <div class="row">        
+        <div class="row">
             <div class="col-12 col-lg-8">
+                @foreach($announcements as $n)
                 <div class="news-content">
-                    <span> <a href="/news">&#8592 Kembali</a></span> <br> <br>
-                    <a href="#"><img src="{{url('uploads/'.$n->foto)}}" alt="" weight="730px" height="377.58"></a>
+                    <a href="/announcements/{{$n->id}}"><img src="{{asset('images/speaker.png')}}" alt="" weight="730px" height="377.58"></a>
 
                     <header class="entry-header d-flex flex-wrap justify-content-between align-items-center">
                         <div class="header-elements">
                             <div class="posted-date">{{date('d M Y', $n->created_at->timestamp)}}</div>
 
-                            <h2 class="entry-title"><a href="#">{{$n->judul}}</a></h2>
+                            <h2 class="entry-title"><a href="/announcements/{{$n->id}}" style="text-decoration: none;">{{$n->judul}}</a></h2>
 
                             <div class="post-metas d-flex flex-wrap align-items-center">
-                                <span class="cat-links">in <a href="#">News</a></span>
-                                <span class="post-author">by <a href="#">{{$n->keterangan}}</a></span>
+                                <span class="cat-links">in <a href="#">Announcements</a></span>
                             </div>
                         </div>
                     </header>
 
                     <div class="entry-content">
-                        <p>{!! nl2br(e($n->isi))!!}</p>
+                        <p>{!!Str::words($n->isi, 100 , '...')!!}</p>
                     </div>
+
+                    <footer class="entry-footer">
+                        <a href="/announcements/{{$n->id}}" class="btn gradient-bg">Read More</a>
+                    </footer>
                 </div>
                 <hr>
+                @endforeach
+
+                <ul class="pagination d-flex flex-wrap align-items-center p-0">
+                {{$announcements->links()}}
+                </ul>
             </div>
 
             <div class="col-12 col-lg-4">
@@ -68,7 +76,7 @@
 
                         <ul class="p-0">
                             <li class="d-flex flex-wrap justify-content-between align-items-center">
-                                <figure><a href="#"><img src="{{images/p-1.jpg" alt=""></a></figure>
+                                <figure><a href="#"><img src="images/p-1.jpg" alt=""></a></figure>
 
                                 <div class="entry-content">
                                     <h3 class="entry-title"><a href="#">A new cause to help</a></h3>

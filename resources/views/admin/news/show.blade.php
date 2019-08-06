@@ -23,7 +23,7 @@ Detail News
                 <p>Tidak ada gambar</p>
         @endif
             <h6>Isi : </h6>
-            <h6>{{$news->isi}}</h6></div>
+            <h6>{!! nl2br(e($news->isi))!!}</h6></div>
 </div>
 </div>
 @endsection()
