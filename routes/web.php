@@ -42,7 +42,8 @@ Route::post('/adminnews/edit/{id}','newsController@edit')->middleware('auth');
 
 //event
 Route::get('/adminevents','CalendarController@index')->middleware('auth');
-Route::get('/adminevents/create', 'CalendarController@create')->middleware('auth');
+Route::get('/adminevents/create', 'CalendarController@vcreate')->middleware('auth');
+Route::post('/adminevents/create', 'CalendarController@create')->middleware('auth');
 
 //news
 Route::get('/adminannouncements','announcementsController@index')->middleware('auth');

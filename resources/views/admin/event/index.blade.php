@@ -9,7 +9,6 @@ Events
 @endsection()
 
 @section('content')
-
 <div class="card mb-3">
           <div class="card-header">
             <i class="fas fa-table"></i>
@@ -19,6 +18,7 @@ Events
 <button class="btn btn-info" id="sidebarToggle">
     <i class="far fa-plus-square"> Tambah Event</i>
 </button></a>
+
 @if (session('success'))
     <div class="alert alert-success">
         {{session('success')}}
@@ -39,7 +39,7 @@ Events
 	        <th colspan="3"> Action </th>
 	    </thead>
 	    <tbody>
-
+	    	
 	    </tbody>
 	</table>
 	<div class="center">
@@ -48,10 +48,11 @@ Events
 	</div>
 </div>
 </div>
+
+<!-- <a href="/adminevents/create">
+<button class="btn btn-info" id="sidebarToggle">
+    <i class="far fa-plus-square"> Tambah News</i>
+</button></a> -->
+
+
 @endsection
-	<!-- {{ Form::open(array('url' => 'event/input')) }}
-    	{{Form::label('tgl', 'Tanggal Event ')}}
-    	{{Form::label('jam', 'Pukul ')}}
-    	{{Form::label('tmpt', 'Tempat ')}}
-    	{{Form::label('desc', 'Deskripsi Event ')}}
-	{{ Form::close() }} -->
