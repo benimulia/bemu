@@ -19,17 +19,17 @@
 
 <div class="news-wrap">
     <div class="container">
-        <div class="row">
+        <div class="row">        
             <div class="col-12 col-lg-8">
-                @foreach($news as $n)
                 <div class="news-content">
-                    <a href="/news/{{$n->id}}"><img src="{{url('uploads/'.$n->foto)}}" alt="" weight="730px" height="377.58"></a>
+                    <span> <a href="/news">&#8592 Kembali</a></span> <br> <br>
+                    <a href="#"><img src="{{url('uploads/'.$n->foto)}}" alt="" weight="730px" height="377.58"></a>
 
                     <header class="entry-header d-flex flex-wrap justify-content-between align-items-center">
                         <div class="header-elements">
                             <div class="posted-date">{{date('d M Y', $n->created_at->timestamp)}}</div>
 
-                            <h2 class="entry-title"><a href="/news/{{$n->id}}" style="text-decoration: none;">{{$n->judul}}</a></h2>
+                            <h2 class="entry-title"><a href="#">{{$n->judul}}</a></h2>
 
                             <div class="post-metas d-flex flex-wrap align-items-center">
                                 <span class="cat-links">in <a href="#">News</a></span>
@@ -39,19 +39,10 @@
                     </header>
 
                     <div class="entry-content">
-                        <p>{!!Str::words($n->isi, 100 , '...')!!}</p>
+                        <p>{!! nl2br(e($n->isi))!!}</p>
                     </div>
-
-                    <footer class="entry-footer">
-                        <a href="/news/{{$n->id}}" class="btn gradient-bg">Read More</a>
-                    </footer>
                 </div>
                 <hr>
-                @endforeach
-
-                <ul class="pagination d-flex flex-wrap align-items-center p-0">
-                {{$news->links()}}
-                </ul>
             </div>
 
             <div class="col-12 col-lg-4">
@@ -64,21 +55,38 @@
                     </div><!-- .search-widget -->
 
                     <div class="popular-posts">
-                        <h2><a class="b"href="/announcements">Pengumuman</a></h2>
-                        <hr>
+                        <h2>Popular Posts</h2>
+
                         <ul class="p-0">
-                            @foreach($announcements as $an)
                             <li class="d-flex flex-wrap justify-content-between align-items-center">
-                                <figure><a href="#"><img src="{{asset('images/speaker.png')}}" height="72px"alt=""></a></figure>
+                                <figure><a href="#"><img src="{{images/p-1.jpg" alt=""></a></figure>
 
                                 <div class="entry-content">
-                                    <h3 class="entry-title"><a href="/announcements/{{$an->id}}">{{$an->judul}}</a></h3>
+                                    <h3 class="entry-title"><a href="#">A new cause to help</a></h3>
 
-                                    <div class="posted-date">{{$an->created_at->format('d, M Y ')}}</div>
+                                    <div class="posted-date">MArch 12, 2018</div>
                                 </div>
                             </li>
-                            @endforeach
-                            
+
+                            <li class="d-flex flex-wrap justify-content-between align-items-center">
+                                <figure><a href="#"><img src="images/p-2.jpg" alt=""></a></figure>
+
+                                <div class="entry-content">
+                                    <h3 class="entry-title"><a href="#">We love to help people</a></h3>
+
+                                    <div class="posted-date">MArch 10, 2018</div>
+                                </div>
+                            </li>
+
+                            <li class="d-flex flex-wrap justify-content-between align-items-center">
+                                <figure><a href="#"><img src="images/p-3.jpg" alt=""></a></figure>
+
+                                <div class="entry-content">
+                                    <h3 class="entry-title"><a href="#">The new ideas for helping</a></h3>
+
+                                    <div class="posted-date">MArch 09, 2018</div>
+                                </div>
+                            </li>
                         </ul>
                     </div><!-- .cat-links -->
 

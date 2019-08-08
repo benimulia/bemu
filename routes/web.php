@@ -40,11 +40,16 @@ Route::get('/adminnews/delete/{id}','newsController@delete')->middleware('auth')
 Route::get('/adminnews/edit/{id}','newsController@vedit')->middleware('auth');
 Route::post('/adminnews/edit/{id}','newsController@edit')->middleware('auth');
 
-//event
+//events
 Route::get('/adminevents','CalendarController@index')->middleware('auth');
-Route::get('/adminevents/create', 'CalendarController@create')->middleware('auth');
+Route::get('/adminevents/create', 'CalendarController@vcreate')->middleware('auth');
+Route::post('/adminevents/create', 'CalendarController@create')->middleware('auth');
+Route::get('/adminevents/edit/{id}','CalendarController@vedit')->middleware('auth');
+Route::post('/adminevents/edit/{id}','CalendarController@edit')->middleware('auth');
+Route::get('/adminevents/delete/{id}','CalendarController@delete')->middleware('auth');
+Route::get('/adminevents/show/{id}','CalendarController@show')->middleware('auth');
 
-//news
+//announcements
 Route::get('/adminannouncements','announcementsController@index')->middleware('auth');
 Route::get('/adminannouncements/show/{id}','announcementsController@Show')->middleware('auth');
 Route::get('/adminannouncements/create','announcementsController@vcreate')->middleware('auth');
@@ -71,3 +76,6 @@ Route::post('/storelpj','ProposalController@storelpj');
 Route::get('/downloadpanduanp3dk', 'ProposalController@downloadPanduanP3DK');
 Route::get('/downloadpanduanlpj', 'ProposalController@downloadPanduanLPJ');
 Route::get('/download-alur-p3dk-lpj', 'ProposalController@downloadAlur');
+
+Route::get('/events','MainController@events');
+Route::get('/events/{id}','MainController@showEvents');

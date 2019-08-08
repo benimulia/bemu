@@ -1,7 +1,7 @@
 @extends('layouts.adminlayout')
 
 @section('breadcrumb')
-<a href="/adminnews">News</a> / Create News
+<a href="/adminnews">News</a> / Edit News
 @endsection()
 
 @section('judul','Edit News')

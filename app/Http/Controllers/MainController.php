@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\News;
 use App\Announcements;
+use App\Calendar;
 
 use Illuminate\Support\Facades\DB;
 class MainController extends Controller
@@ -15,7 +16,8 @@ class MainController extends Controller
         
         $news = news::orderBy('created_at','DESC')->take(5)->get();
         $announcements = announcements::orderBy('created_at','DESC')->take(3)->get();
-        return view('welcome',array('news' =>$news , 'announcements'=>$announcements ));
+        $events = Calendar::all();
+        return view('welcome',array('news' =>$news , 'announcements'=>$announcements, 'events' =>$events ));
     }
 
     // FITUR NEWS
@@ -42,5 +44,17 @@ class MainController extends Controller
     public function showAnnouncements($id){
         $n = announcements::Find($id);
         return view('user.showannouncements',compact('n'));
+    }
+
+    // FITUR EVENT
+    public function events()
+    {
+        $events = Calendar::all();
+        return view('user.events', array('events' =>$events));
+    }
+
+    public function showEvents($id){
+        $events = Calendar::Find($id);
+        return view('user.showevents',compact('events'));
     }
 }
