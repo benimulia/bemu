@@ -20,13 +20,21 @@ class CalendarController extends Controller
     	$events->pembuat = $request->input('keterangan');
     	$events->deskripsi = $request->input('isi');
     	$menitAwal= str_pad($request->input('menitAwal'),2,"0",STR_PAD_LEFT);
-    	$menitAkhir = str_pad($request->input('menitAkhir') ,2,"0",STR_PAD_LEFT);
-    	$jamAkhir = str_pad($request->input('jamAkhir') ,2,"0",STR_PAD_LEFT);
+        $events->jamAkhir = NULL;
+        $events->menitAkhir = NULL;
+        if($request->input('menitAkhir') != NULL){
+    	   $menitAkhir = str_pad($request->input('menitAkhir') ,2,"0",STR_PAD_LEFT);
+           $events->menitAkhir = $menitAkhir;
+        }
+        if($request->input('jamAkhir') != NULL){
+    	   $jamAkhir = str_pad($request->input('jamAkhir') ,2,"0",STR_PAD_LEFT);
+           $events->jamAkhir = $jamAkhir;
+        }
     	$jamAwal = str_pad($request->input('jamAwal'),2,"0",STR_PAD_LEFT);
     	$events->jamAwal = $jamAwal ;
     	$events->menitAwal = $menitAwal;
-	    $events->jamAkhir = $jamAkhir;
-	    $events->menitAkhir = $menitAkhir;
+	    
+	    
     	$events->tanggalAwal = $request->input('tglaw') ;
     	$events->tanggalAkhir = $request->input('tglak') ;
     	$events->save();
@@ -53,13 +61,19 @@ class CalendarController extends Controller
     	$events->pembuat = $request->input('keterangan');
     	$events->deskripsi = $request->input('isi');
     	$menitAwal= str_pad($request->input('menitAwal'),2,"0",STR_PAD_LEFT);
-    	$menitAkhir = str_pad($request->input('menitAkhir') ,2,"0",STR_PAD_LEFT);
-    	$jamAkhir = str_pad($request->input('jamAkhir') ,2,"0",STR_PAD_LEFT);
+	    $events->jamAkhir = NULL;
+	    $events->menitAkhir = NULL;
+    	if($request->input('menitAkhir') != NULL){
+           $menitAkhir = str_pad($request->input('menitAkhir') ,2,"0",STR_PAD_LEFT);
+           $events->menitAkhir = $menitAkhir;
+        }
+        if($request->input('jamAkhir') != NULL){
+           $jamAkhir = str_pad($request->input('jamAkhir') ,2,"0",STR_PAD_LEFT);
+           $events->jamAkhir = $jamAkhir;
+        }
     	$jamAwal = str_pad($request->input('jamAwal'),2,"0",STR_PAD_LEFT);
     	$events->jamAwal = $jamAwal ;
     	$events->menitAwal = $menitAwal;
-	    $events->jamAkhir = $jamAkhir;
-	    $events->menitAkhir = $menitAkhir;
     	$events->tanggalAwal = $request->input('tglaw') ;
     	$events->tanggalAkhir = $request->input('tglak') ;
     	$events->save();
@@ -69,8 +83,7 @@ class CalendarController extends Controller
 
     public function delete($id)
     {
-        $events = Calendar::Find($id);
-        // print_r($news->foto);exit;
+        $events = Calendar::Find($id);        
         $events->delete();
         return redirect('/adminevents')->with(['status' => 'Event berhasil dihapus']);
     }

@@ -2,7 +2,7 @@
 <div class="col-12 col-lg-6">
     <div class="upcoming-events">
         <div class="section-heading">
-            <h2 class="entry-title"><span class="glyphicon glyphicon-list" ></span>Upcoming Events</h2>
+            <a href="/events" style="text-decoration: none;"><h2 class="entry-title"></span>Events</h2></a>
         </div><!-- .section-heading -->
             <!-- <nav class="navbar navbar-expand bg-transparent">
                 <ul class="nav navbar-nav ml-auto">

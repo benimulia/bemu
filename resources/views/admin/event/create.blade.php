@@ -19,15 +19,15 @@ Create Event
         <input readonly="readonly" type="text" class="form-control" id="keterangan" name="keterangan" placeholder="{{ Auth::user()->name }}"value="{{ Auth::user()->name }}">
     </div>
     <div class="form-group">
-        <label for="judul">Nama Event :</label>
-        <input type="text" class="form-control" id="judul" name="judul" placeholder="Masukan nama">
+        <label for="judul">Nama Event : ( usahakan  maks. 15 karakter ) </label>
+        <input type="text" class="form-control" id="judul" name="judul" placeholder="Masukan nama" required>
         <div class="valid-feedback">Valid.</div>
         <div class="invalid-feedback">Please fill out this field.</div>
     </div>
     <div class="form-group">
         <label for="pukul">Tanggal Event:</label><br>
-        <input class="form-control-sm" id="tglaw" name="tglaw"  type="date" id="start" name="trip-start" min="2019-01-01" max="2019-12-31"> - 
-        <input class="form-control-sm" id="tglak" name="tglak"  type="date" id="start" name="trip-start" min="2019-01-01" max="2019-12-31">
+        <input class="form-control-sm" id="tglaw" name="tglaw"  type="date" id="start" name="trip-start" min="2019-01-01" max="2019-12-31"required> - 
+        <input class="form-control-sm" id="tglak" name="tglak"  type="date" id="start" name="trip-start" min="2019-01-01" max="2019-12-31"required>
         <div class="valid-feedback">Valid.</div>
         <div class="invalid-feedback">Please fill out this field.</div>
     </div>

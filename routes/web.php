@@ -67,3 +67,6 @@ Route::get('/news/{id}','MainController@showNews');
 
 Route::get('/announcements','MainController@announcements');
 Route::get('/announcements/{id}','MainController@showAnnouncements');
+
+Route::get('/events','MainController@events');
+Route::get('/events/{id}','MainController@showEvents');
