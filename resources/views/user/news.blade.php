@@ -7,7 +7,7 @@
         <li><a href="about.html">About us</a></li>
         <li class="current-menu-item"><a href="/news">News</a></li>
         <li><a href="portfolio.html">Organization</a></li>
-        <li><a href="news.html">Download Center</a></li>
+        <li><a href="/downloadcenter">Download Center</a></li>
         <li><a href="contact.html">Contact</a></li>
     </ul>
 </nav><!-- .site-navigation -->
@@ -73,38 +73,21 @@
                     </div><!-- .search-widget -->
 
                     <div class="popular-posts">
-                        <h2>Popular Posts</h2>
-
+                        <h2><a class="b"href="/announcements">Pengumuman</a></h2>
+                        <hr>
                         <ul class="p-0">
+                            @foreach($announcements as $an)
                             <li class="d-flex flex-wrap justify-content-between align-items-center">
-                                <figure><a href="#"><img src="images/p-1.jpg" alt=""></a></figure>
+                                <figure><a href="#"><img src="{{asset('images/speaker.png')}}" height="72px"alt=""></a></figure>
 
                                 <div class="entry-content">
-                                    <h3 class="entry-title"><a href="#">A new cause to help</a></h3>
+                                    <h3 class="entry-title"><a href="/announcements/{{$an->id}}">{{$an->judul}}</a></h3>
 
-                                    <div class="posted-date">MArch 12, 2018</div>
+                                    <div class="posted-date">{{$an->created_at->format('d, M Y ')}}</div>
                                 </div>
                             </li>
-
-                            <li class="d-flex flex-wrap justify-content-between align-items-center">
-                                <figure><a href="#"><img src="images/p-2.jpg" alt=""></a></figure>
-
-                                <div class="entry-content">
-                                    <h3 class="entry-title"><a href="#">We love to help people</a></h3>
-
-                                    <div class="posted-date">MArch 10, 2018</div>
-                                </div>
-                            </li>
-
-                            <li class="d-flex flex-wrap justify-content-between align-items-center">
-                                <figure><a href="#"><img src="images/p-3.jpg" alt=""></a></figure>
-
-                                <div class="entry-content">
-                                    <h3 class="entry-title"><a href="#">The new ideas for helping</a></h3>
-
-                                    <div class="posted-date">MArch 09, 2018</div>
-                                </div>
-                            </li>
+                            @endforeach
+                            
                         </ul>
                     </div><!-- .cat-links -->
 

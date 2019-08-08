@@ -22,12 +22,14 @@ class MainController extends Controller
     public function news()
     {
         $news = news::orderBy('created_at','DESC')->paginate(3);
-        return view('user.news', array('news' =>$news, 'coba'=>$news));
+        $announcements = announcements::orderBy('created_at','DESC')->take(3)->get();
+        return view('user.news', array('news' =>$news, 'coba'=>$news, 'announcements'=>$announcements));
     }
 
     public function showNews($id){
         $n = news::Find($id);
-        return view('user.shownews',compact('n'));
+        $announcements = announcements::orderBy('created_at','DESC')->take(3)->get();
+        return view('user.shownews', array('n' =>$n, 'announcements'=>$announcements));
     }
 
     // FITUR ANNOUNCEMENT

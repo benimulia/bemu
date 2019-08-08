@@ -7,7 +7,7 @@
         <li><a href="about.html">About us</a></li>
         <li><a href="/news">News</a></li>
         <li><a href="portfolio.html">Organization</a></li>
-        <li><a href="/downloadcenter">Download Center</a></li>
+        <li class="current-menu-item"><a href="/downloadcenter">Download Center</a></li>
         <li><a href="contact.html">Contact</a></li>
     </ul>
 </nav><!-- .site-navigation -->
@@ -20,7 +20,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h1>Announcements</h1>
+                <h1>Download Center</h1>
             </div><!-- .col -->
         </div><!-- .row -->
     </div><!-- .container -->
@@ -30,36 +30,19 @@
     <div class="container">
         <div class="row">
             <div class="col-12 col-lg-8">
-                @foreach($announcements as $n)
-                <div class="news-content">
-                    <a href="/announcements/{{$n->id}}"><img src="{{asset('images/speaker.png')}}" alt="" weight="730px" height="377.58"></a>
+                <p><i>*untuk mendownload file P3DK / LPJ, diharap mengisi formulir yang ada terlebih dahulu</i></p> <br>
+                <h4>FORMULIR MEMBUAT P3DK</h4>
+                <a href="/createp3dk" class="">Click Here!</a>
+                <br> <br> <hr style="weight:100px">
+                <h4>FORMULIR MEMBUAT LPJ</h4>
+                <a href="/createlpj" class="">Click Here!</a>
+                <br> <br> <hr>
+                <h4>LINK DOWNLOAD PANDUAN P3DK & LPJ</h4> <br>
+                <a href="/downloadpanduanp3dk" class=""><i class="fa fa-download"> </i> Download Panduan P3DK </a> <br> <br>
+                <a href="/downloadpanduanlpj" class=""><i class="fa fa-download"> </i> Download Panduan LPJ </a> <br> <br>
+                <a href="/download-alur-p3dk-lpj" class=""><i class="fa fa-download"> </i> Download Alur P3DK & LPJ </a> 
+                <br><hr>
 
-                    <header class="entry-header d-flex flex-wrap justify-content-between align-items-center">
-                        <div class="header-elements">
-                            <div class="posted-date">{{date('d M Y', $n->created_at->timestamp)}}</div>
-
-                            <h2 class="entry-title"><a href="/announcements/{{$n->id}}" style="text-decoration: none;">{{$n->judul}}</a></h2>
-
-                            <div class="post-metas d-flex flex-wrap align-items-center">
-                                <span class="cat-links">in <a href="#">Announcements</a></span>
-                            </div>
-                        </div>
-                    </header>
-
-                    <div class="entry-content">
-                        <p>{!!Str::words($n->isi, 100 , '...')!!}</p>
-                    </div>
-
-                    <footer class="entry-footer">
-                        <a href="/announcements/{{$n->id}}" class="btn gradient-bg">Read More</a>
-                    </footer>
-                </div>
-                <hr>
-                @endforeach
-
-                <ul class="pagination d-flex flex-wrap align-items-center p-0">
-                {{$announcements->links()}}
-                </ul>
             </div>
 
             <div class="col-12 col-lg-4">

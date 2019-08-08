@@ -7,7 +7,7 @@
         <li><a href="about.html">About us</a></li>
         <li><a href="/news">News</a></li>
         <li><a href="portfolio.html">Organization</a></li>
-        <li><a href="news.html">Download Center</a></li>
+        <li><a href="/downloadcenter">Download Center</a></li>
         <li><a href="contact.html">Contact</a></li>
     </ul>
 </nav><!-- .site-navigation -->

@@ -2134,3 +2134,20 @@ ul.tabs-nav .tab-nav.active {
     background: #131212;
     text-align: center;
 }
+
+.tombol {
+    background: #3498db;
+    color: #fff;
+    border:none;
+    padding: 6px 15px;
+    cursor:pointer;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 8px;
+  }
+
+.b-background{
+    background: #eeeeee;
+}

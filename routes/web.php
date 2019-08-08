@@ -62,3 +62,12 @@ Route::get('/news/{id}','MainController@showNews');
 
 Route::get('/announcements','MainController@announcements');
 Route::get('/announcements/{id}','MainController@showAnnouncements');
+
+Route::view('/downloadcenter','user.downloadcenter');
+Route::get('/createp3dk','ProposalController@createp3dk');
+Route::post('/storep3dk','ProposalController@storep3dk');
+Route::get('/createlpj','ProposalController@createlpj');
+Route::post('/storelpj','ProposalController@storelpj');
+Route::get('/downloadpanduanp3dk', 'ProposalController@downloadPanduanP3DK');
+Route::get('/downloadpanduanlpj', 'ProposalController@downloadPanduanLPJ');
+Route::get('/download-alur-p3dk-lpj', 'ProposalController@downloadAlur');

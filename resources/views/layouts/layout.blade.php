@@ -97,12 +97,10 @@
 
                         <ul>
                             <li><a href="#">Privacy Polticy</a></li>
-                            <li><a href="#">Become  a Volunteer</a></li>
-                            <li><a href="#">Donate</a></li>
-                            <li><a href="#">Testimonials</a></li>
-                            <li><a href="#">Causes</a></li>
-                            <li><a href="#">Portfolio</a></li>
-                            <li><a href="#">News</a></li>
+                            <li><a href="http://www.ukdw.ac.id" target="_blank">Website UKDW</a></li>
+                            <li><a href="/downloadcenter">Mekanisme P3DK & LPJ</a></li>
+                            <li><a href="/announcements">Pengumuman</a></li>
+                            <li><a href="#">Agenda</a></li>
                         </ul>
                     </div><!-- .col -->
 
@@ -155,7 +153,9 @@ Copyright &copy;BEM UKDW <script>document.write(new Date().getFullYear());</scri
     <script type='text/javascript' src="{{asset ('js/jquery.barfiller.js')}}"></script>
     <script type='text/javascript' src="{{asset ('js/custom.js')}}"></script>
 
+    
 </body>
+@yield('scripting')
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
