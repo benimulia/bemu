@@ -215,7 +215,7 @@
                     </div><!-- .upcoming-events -->
                 </div><!-- .col -->
                     
-               @include('include.events')
+               @include('fileevent.events')
 
             </div><!-- .row -->
         </div><!-- .container -->

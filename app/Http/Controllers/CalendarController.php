@@ -74,4 +74,10 @@ class CalendarController extends Controller
         $events->delete();
         return redirect('/adminevents')->with(['status' => 'Event berhasil dihapus']);
     }
+
+    public function show($id)
+    {
+        $events = Calendar::Find($id);
+        return view ('admin.event.show', compact('events'));
+    }
 }

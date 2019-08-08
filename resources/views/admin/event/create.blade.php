@@ -11,6 +11,7 @@ Create Event
 @section('content')
 
 <div class="container">
+<span> <a href="/adminevents">&#8592 Kembali</a></span>
 <form method="POST" action="/adminevents/create" >
 {{ csrf_field() }}
     <div class="form-group">
