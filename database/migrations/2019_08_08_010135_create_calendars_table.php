@@ -21,8 +21,10 @@ class CreateCalendarsTable extends Migration
             $table->date('tanggalAkhir');
             $table->string('jamAwal');
             $table->string('jamAkhir');
-            $table->string('tempat');
-            $table->string('deskripsi');
+            $table->string('menitAwal')->nullable();
+            $table->string('menitAkhir')->nullable();
+            $table->string('tempat')->nullable();
+            $table->string('deskripsi')->nullable();
             $table->timestamps();
         });
     }
