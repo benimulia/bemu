@@ -58,6 +58,14 @@ Route::get('/adminannouncements/delete/{id}','announcementsController@delete')->
 Route::get('/adminannouncements/edit/{id}','announcementsController@vedit')->middleware('auth');
 Route::post('/adminannouncements/edit/{id}','announcementsController@edit')->middleware('auth');
 
+//organisasi
+Route::get('/adminorganisasi','OrganisasiController@index')->middleware('auth');
+Route::get('/adminorganisasi/show/{id}','OrganisasiController@sOrganisasi')->middleware('auth');
+Route::get('/adminorganisasi/create','OrganisasiController@vCOrganisasi')->middleware('auth');
+Route::post('/adminorganisasi/create', 'OrganisasiController@cOrganisasi')->middleware('auth');
+Route::get('/adminorganisasi/delete/{id}','OrganisasiController@dOrganisasi')->middleware('auth');
+Route::get('/adminorganisasi/edit/{id}','OrganisasiController@vEOrganisai')->middleware('auth');
+Route::post('/adminorganisasi/edit/{id}','OrganisasiController@eOrganisasi')->middleware('auth');
 
 ///////////////////////////////////////////////////////////////////////////////////////
 

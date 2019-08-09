@@ -15,7 +15,7 @@
         </a>
       </li>
       <li class="nav-item {{Request::is('adminorganization')?'active':''}}">
-        <a class="nav-link" href="/jadwal">
+        <a class="nav-link" href="/adminorganisasi">
           <i class="fas fa-fw fa-clock"></i>
           <span>Organization</span></a>
       </li>
