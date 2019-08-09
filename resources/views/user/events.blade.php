@@ -11,7 +11,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h1>News</h1>
+                <h1>Events</h1>
             </div><!-- .col -->
         </div><!-- .row -->
     </div><!-- .container -->
@@ -19,39 +19,62 @@
 
 <div class="news-wrap">
     <div class="container">
+        <div class="section-heading">
+            <h2 class="entry-title">This Year</h2>
+        </div>
         <div class="row">
-            <div class="col-12 col-lg-8">
-                @foreach($events as $n)
-                <div class="news-content">
-                    <a href="/news/{{$n->id}}"><img src="{{url('uploads/'.$n->foto)}}" alt="" weight="730px" height="377.58"></a>
+            <div class="col-12 col-lg-8 ">
 
-                    <header class="entry-header d-flex flex-wrap justify-content-between align-items-center">
-                        <div class="header-elements">
-                            <div class="posted-date">{{date('d M Y', $n->created_at->timestamp)}}</div>
 
-                            <h2 class="entry-title"><a href="/news/{{$n->id}}" style="text-decoration: none;">{{$n->judul}}</a></h2>
+                @foreach($events as $ev)
 
-                            <div class="post-metas d-flex flex-wrap align-items-center">
-                                <span class="cat-links">in <a href="#">News</a></span>
-                                <span class="post-author">by <a href="#">{{$n->keterangan}}</a></span>
-                            </div>
+                
+                <div class="row row-stripped">
+                    
+                    @if ( $ev->tanggalAwal != $ev->tanggalAkhir)
+                        <div class="col-2 text-right">
+                            <h1 class="display-5"><span class="badge badge-secondary">{{date('d',strtotime($ev->tanggalAwal))}}</span></h1>
+                            <h4>{{date('M',strtotime($ev->tanggalAwal))}}</h4>
+                        </div> 
+                        
+                        <div class="col-2 text-left">
+                            <h1 class="display-5"><span class="badge badge-secondary">{{date('d',strtotime($ev->tanggalAkhir))}}</span></h1>
+                            <h4>{{date('M',strtotime($ev->tanggalAkhir))}}</h4>
                         </div>
-                    </header>
-
-                    <div class="entry-content">
-                        <p>{!!Str::words($n->isi, 100 , '...')!!}</p>
+                    @else
+                        <div class="col-4 text-center">
+                            <h1 class="display-5"><span class="badge badge-secondary">{{date('d',strtotime($ev->tanggalAwal))}}</span></h1>
+                            <h4>{{date('M',strtotime($ev->tanggalAwal))}}</h4>
+                        </div>
+                    @endif
+                    <div class="col-8">
+                        <h5 class="text-uppercase"><strong>{{$ev->nama}}</strong></h5>
+                        <ul class="list-inline ">
+                            <li class="list-inline-item"><i class="fa fa-calendar-o" aria-hidden="true"></i>
+                                @if ( $ev->tanggalAwal != $ev->tanggalAkhir)
+                                    {{date('D',strtotime($ev->tanggalAwal))}}-{{date('D',strtotime($ev->tanggalAkhir))}}
+                                @else
+                                    {{date('D',strtotime($ev->tanggalAwal))}}
+                                @endif
+                            </li>
+                            <li class="list-inline-item"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+                                {{$ev->jamAwal}}:{{$ev->menitAwal}} - 
+                                @if($ev->jamAkhir == NULL || $ev->menitAkhir == NULL)
+                                 Selesai
+                                @else
+                                 {{$ev->jamAkhir}}:{{$ev->menitAkhir}}
+                                @endif
+                            </li>
+                            @if($ev->tempat != NULL)
+                                <li class="list-inline-item"><i class="fa fa-location-arrow" aria-hidden="true"></i>{{$ev->tempat}}</li>
+                            @endif
+                        </ul>
+                        <p  id="{{$ev->id}}">{{$ev->deskripsi}}</p>
                     </div>
-
-                    <footer class="entry-footer">
-                        <a href="/news/{{$n->id}}" class="btn gradient-bg">Read More</a>
-                    </footer>
-                </div>
                 <hr>
+                
+                </div>
                 @endforeach
-
-                <ul class="pagination d-flex flex-wrap align-items-center p-0">
-                {{$news->links()}}
-                </ul>
             </div>
 
             <div class="col-12 col-lg-4">

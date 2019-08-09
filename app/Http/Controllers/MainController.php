@@ -16,7 +16,7 @@ class MainController extends Controller
         
         $news = news::orderBy('created_at','DESC')->take(5)->get();
         $announcements = announcements::orderBy('created_at','DESC')->take(3)->get();
-        $events = Calendar::all();
+        $events = Calendar::orderBy('tanggalAwal','ASC')->get();
         return view('welcome',array('news' =>$news , 'announcements'=>$announcements, 'events' =>$events ));
     }
 
@@ -49,7 +49,7 @@ class MainController extends Controller
     // FITUR EVENT
     public function events()
     {
-        $events = Calendar::all();
+        $events = Calendar::orderBy('tanggalAwal','ASC')->get();
         return view('user.events', array('events' =>$events));
     }
 
@@ -57,4 +57,5 @@ class MainController extends Controller
         $events = Calendar::Find($id);
         return view('user.showevents',compact('events'));
     }
+
 }
