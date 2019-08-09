@@ -113,8 +113,6 @@
 		
 		<div class="row row-striped" id="ev">
 			
-			<div class='col-4 text-right'><h1 class='display-5'><span class='badge badge-secondary'>08</span></h1><h4>Agu</h4></div><div class='col-8'><h5 class='text-uppercase'><strong>lorem ipsum dolo...</strong></h5><ul class='list-inline'><li class='list-inline-item'><i class='fa fa-calendar-o' aria-hidden='true'></i> Sen</li><li class='list-inline-item'><i class='fa fa-clock-o' aria-hidden='true'></i> 03:03 - Selesai</li></ul><div class='col-2 text-center'><h1 class='display-5'><span class='badge badge-secondary'>22</span></h1><h4>Agu</h4></div><div class='col-2 text-center'><h1 class='display-5'><span class='badge badge-secondary'>24</span></h1><h4>Agu</h4></div><div class='col-8'><h5 class='text-uppercase'><strong>asdadasdasdasda</strong></h5><ul class='list-inline'><li class='list-inline-item'><i class='fa fa-calendar-o' aria-hidden='true'></i> Sen - Rab</li><li class='list-inline-item'><i class='fa fa-clock-o' aria-hidden='true'></i> 12:20 - 13:20</li></ul>
-			
-		
+		</div>
 		
 	</div>
