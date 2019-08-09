@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\News;
 use App\Announcements;
 use App\Calendar;
+use App\Organisasi;
 
 use Illuminate\Support\Facades\DB;
 class MainController extends Controller
@@ -13,7 +14,6 @@ class MainController extends Controller
     //HALAMAN UTAMA
     public function utama()
     {
-        
         $news = news::orderBy('created_at','DESC')->take(5)->get();
         $announcements = announcements::orderBy('created_at','DESC')->take(3)->get();
         $events = Calendar::orderBy('tanggalAwal','ASC')->get();
@@ -56,6 +56,14 @@ class MainController extends Controller
     public function showEvents($id){
         $events = Calendar::Find($id);
         return view('user.showevents',compact('events'));
+    }
+
+
+    // FITUR ORGANISASI
+    public function organisasi()
+    {
+        $organisasi = organisasi::all();
+        return view('user.organisasi', compact('organisasi'));
     }
 
 }

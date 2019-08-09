@@ -87,3 +87,5 @@ Route::get('/download-alur-p3dk-lpj', 'ProposalController@downloadAlur');
 
 Route::get('/events','MainController@events');
 Route::get('/events/{id}','MainController@showEvents');
+
+Route::get('/organisasi','MainController@organisasi');
