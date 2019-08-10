@@ -7,7 +7,11 @@
 @section('bodyclass', 'single-page news-page')
 
 @section('content')
-
+@if (session('success'))
+    <div class="alert alert-success">
+        {{session('success')}}
+    </div>
+@endif
 <div class="page-header">
     <div class="container">
         <div class="row">
