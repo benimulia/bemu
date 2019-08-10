@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
+use App\Announcements;
+use App\Calendar;
 use App\Mail\Announcement;
 use Carbon\Carbon;
 use DateTime;
@@ -16,12 +18,16 @@ class ProposalController extends Controller
 {
     public function createp3dk()
     {
-        return view('user.createp3dk');
+        $announcements = announcements::orderBy('created_at','DESC')->take(3)->get();
+        $events = Calendar::orderBy('tanggalAwal','ASC')->get();
+        return view('user.createp3dk', array('announcements'=>$announcements, 'events' =>$events));
     }
 
     public function createlpj()
     {
-        return view('user.createlpj');
+        $announcements = announcements::orderBy('created_at','DESC')->take(3)->get();
+        $events = Calendar::orderBy('tanggalAwal','ASC')->get();
+        return view('user.createlpj', array('announcements'=>$announcements, 'events' =>$events));
     }
 
     public function storep3dk(Request $request)

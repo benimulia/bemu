@@ -69,6 +69,7 @@ Route::post('/adminorganisasi/edit/{id}','OrganisasiController@eOrganisasi')->mi
 
 ///////////////////////////////////////////////////////////////////////////////////////
 
+
 //USER
 Route::get('/news','MainController@news');
 Route::get('/news/{id}','MainController@showNews');
@@ -76,7 +77,7 @@ Route::get('/news/{id}','MainController@showNews');
 Route::get('/announcements','MainController@announcements');
 Route::get('/announcements/{id}','MainController@showAnnouncements');
 
-Route::view('/downloadcenter','user.downloadcenter');
+Route::get('/downloadcenter','MainController@downloadcenter');
 Route::get('/createp3dk','ProposalController@createp3dk');
 Route::post('/storep3dk','ProposalController@storep3dk');
 Route::get('/createlpj','ProposalController@createlpj');
@@ -86,8 +87,11 @@ Route::get('/downloadpanduanlpj', 'ProposalController@downloadPanduanLPJ');
 Route::get('/download-alur-p3dk-lpj', 'ProposalController@downloadAlur');
 
 Route::get('/events','MainController@events');
-Route::get('/events/{id}','MainController@showEvents');
 
 Route::get('/organisasi','MainController@organisasi');
 
 Route::view('/aboutus','user.aboutus');
+
+Route::get('/contact','MainController@contact');
+
+Route::post('/contact', ['as'=>'contact.store','uses'=>'ContactController@contactPost']);

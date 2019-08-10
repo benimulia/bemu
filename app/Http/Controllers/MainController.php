@@ -16,7 +16,8 @@ class MainController extends Controller
     {
         $news = news::orderBy('created_at','DESC')->take(5)->get();
         $announcements = announcements::orderBy('created_at','DESC')->take(3)->get();
-        $events = Calendar::all();
+        $events = Calendar::orderBy('tanggalAwal','ASC')->get();
+
         return view('welcome',array('news' =>$news , 'announcements'=>$announcements, 'events' =>$events ));
     }
 
@@ -25,7 +26,8 @@ class MainController extends Controller
     {
         $news = news::orderBy('created_at','DESC')->paginate(3);
         $announcements = announcements::orderBy('created_at','DESC')->take(3)->get();
-        return view('user.news', array('news' =>$news, 'coba'=>$news, 'announcements'=>$announcements));
+        $events = Calendar::orderBy('tanggalAwal','ASC')->get();
+        return view('user.news', array('news' =>$news, 'coba'=>$news, 'announcements'=>$announcements,'events' =>$events));
     }
 
     public function showNews($id){
@@ -49,14 +51,11 @@ class MainController extends Controller
     // FITUR EVENT
     public function events()
     {
-        $events = Calendar::all();
-        return view('user.events', array('events' =>$events));
+        $events = Calendar::orderBy('tanggalAwal','ASC')->get();
+        $announcements = announcements::orderBy('created_at','DESC')->take(3)->get();
+        return view('user.events', array('events' =>$events, 'announcements'=>$announcements));
     }
 
-    public function showEvents($id){
-        $events = Calendar::Find($id);
-        return view('user.showevents',compact('events'));
-    }
 
     // FITUR ORGANISASI
     public function organisasi()
@@ -64,4 +63,21 @@ class MainController extends Controller
         $organisasi = organisasi::all();
         return view('user.organisasi', compact('organisasi'));
     }
+
+    // FITUR CONTACT
+    public function contact()
+    {
+        $announcements = announcements::orderBy('created_at','DESC')->take(3)->get();
+        $events = Calendar::orderBy('tanggalAwal','ASC')->get();
+        return view('user.contact', array( 'announcements'=>$announcements, 'events' =>$events ));
+    }
+
+    //FITUR DOWNLOAD
+    public function downloadcenter()
+    {
+        $announcements = announcements::orderBy('created_at','DESC')->take(3)->get();
+        $events = Calendar::orderBy('tanggalAwal','ASC')->get();
+        return view('user.downloadcenter', array( 'announcements'=>$announcements, 'events' =>$events ));
+    }
+
 }
