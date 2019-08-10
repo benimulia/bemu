@@ -23,7 +23,7 @@
             <div class="col-12 col-lg-8">
                 @foreach($events as $n)
                 <div class="news-content">
-                    <a href="/news/{{$n->id}}"><img src="{{url('uploads/'.$n->foto)}}" alt="" weight="730px" height="377.58"></a>
+                    <a href="/events/{{$n->id}}"><img src="{{url('uploads/'.$n->foto)}}" alt="" weight="730px" height="377.58"></a>
 
                     <header class="entry-header d-flex flex-wrap justify-content-between align-items-center">
                         <div class="header-elements">

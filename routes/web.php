@@ -89,3 +89,5 @@ Route::get('/events','MainController@events');
 Route::get('/events/{id}','MainController@showEvents');
 
 Route::get('/organisasi','MainController@organisasi');
+
+Route::view('/aboutus','user.aboutus');
