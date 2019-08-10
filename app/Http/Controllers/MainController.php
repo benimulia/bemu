@@ -52,7 +52,8 @@ class MainController extends Controller
     public function events()
     {
         $events = Calendar::orderBy('tanggalAwal','ASC')->get();
-        return view('user.events', array('events' =>$events));
+        $announcements = announcements::orderBy('created_at','DESC')->take(3)->get();
+        return view('user.events', array('events' =>$events, 'announcements'=>$announcements));
     }
 
 
