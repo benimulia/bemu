@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\News;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
+use App\Announcements;
+use App\Calendar;
 use DB;
 use Illuminate\Support\Str;
 

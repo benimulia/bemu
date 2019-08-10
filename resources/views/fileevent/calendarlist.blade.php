@@ -38,11 +38,9 @@
 			//   		ajaxAllMhs.open( "GET" , "json.blade.php" , true );
 			//   		ajaxAllMhs.onreadystatechange = function () {
 			// 			if ( this.readyState == 4 && this.status == 200 ) {
-							console.log({!! $events!!})
 							var listTanggal = {!! json_encode($events->toArray(), JSON_HEX_TAG) !!};
 							listTanggal.forEach(function(item){
-								console.log(item.tanggalAkhir.substring(5,7));
-								console.log(month);
+
 								if ( month !=  Number(item.tanggalAkhir.substring(5,7)) &&  month != Number(item.tanggalAwal.substring(5,7)) )
 									return;
 								var check = item.tanggalAwal != item.tanggalAkhir;
@@ -84,7 +82,6 @@
 									html+= "<p><a onclick=\"document.getElementById('" + item.id+  "').classList.remove('d-none'); this.style.display='none'\">Read more</a></p>";
 								}
 								html+="</div>"
-								console.log(html);
 							})
 			// 			}	
 						document.getElementById('ev').innerHTML = html;
@@ -115,4 +112,4 @@
 			
 		</div>
 		
-	</div>
+</div>
