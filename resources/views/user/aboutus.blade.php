@@ -16,7 +16,16 @@
 @section('bodyclass', 'single-page news-page')
 
 @section('content')
-<br/><br/>
+<div class="page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1>About Us</h1>
+            </div><!-- .col -->
+        </div><!-- .row -->
+    </div><!-- .container -->
+</div><!-- .page-header -->
+<br/>
 <div class="table-responsive center">
 <table class="table" style="border:none" width="100%" cellspacing="0">
     <thead style="border:none">

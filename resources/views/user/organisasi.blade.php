@@ -7,6 +7,16 @@
 @section('bodyclass', 'single-page news-page')
 
 @section('content')
+<div class="page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1>Organisasi Kemahasiswaan</h1>
+            </div><!-- .col -->
+        </div><!-- .row -->
+    </div><!-- .container -->
+</div><!-- .page-header -->
+
 <div class="container">
   <div class ="row text-center">
     @foreach($organisasi as $organisasi)
