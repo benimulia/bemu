@@ -218,9 +218,10 @@
             <div class="row align-items-end">
                 <div class="coL-12 col-lg-6">
                     <div class="section-heading">
-                        <h2 class="entry-title">We love to help all the children that have problems in the world. After 15 years we have many goals achieved.</h2>
+                        <h2 class="entry-title">"Kesuksesan adalah hasil dari kesempurnaan, kerja keras, belajar dari pengalaman, loyalitas, dan kegigihan" &nbsp- Colin Powell</h2><br>
+                        
 
-                        <p class="mt-5">Dolor sit amet, consectetur adipiscing elit. Mauris tempus vestib ulum mauris quis aliquam. Lorem ipsum dolor sit amet.</p>
+                        <p class="mt-5">BEMU2019 - #BersamaKitaBisa</p>
                     </div><!-- .section-heading -->
                 </div><!-- .col -->
 
@@ -233,11 +234,11 @@
                                 </div>
 
                                 <div class="d-flex justify-content-center align-items-baseline">
-                                    <div class="start-counter" data-to="120" data-speed="2000"></div>
-                                    <div class="counter-k">K</div>
+                                    <div class="start-counter" data-to="100" data-speed="2000"></div>
+                                    <div class="counter-k">%</div>
                                 </div>
 
-                                <h3 class="entry-title">Children helped</h3><!-- entry-title -->
+                                <h3 class="entry-title">Kerja Sama</h3><!-- entry-title -->
                             </div><!-- counter-box -->
                         </div><!-- .col -->
 
@@ -248,10 +249,11 @@
                                 </div>
 
                                 <div class="d-flex justify-content-center align-items-baseline">
-                                    <div class="start-counter" data-to="79" data-speed="2000"></div>
+                                    <div class="start-counter" data-to="100" data-speed="2000"></div>
+                                    <div class="counter-k">%</div>
                                 </div>
 
-                                <h3 class="entry-title">Water wells</h3><!-- entry-title -->
+                                <h3 class="entry-title">Loyalitas</h3><!-- entry-title -->
                             </div><!-- counter-box -->
                         </div><!-- .col -->
 
@@ -262,10 +264,11 @@
                                 </div>
 
                                 <div class="d-flex justify-content-center align-items-baseline">
-                                    <div class="start-counter" data-to="253" data-speed="2000"></div>
+                                    <div class="start-counter" data-to="100" data-speed="2000"></div>
+                                    <div class="counter-k">%</div>
                                 </div>
 
-                                <h3 class="entry-title">Volunteeres</h3><!-- entry-title -->
+                                <h3 class="entry-title">Kasih</h3><!-- entry-title -->
                             </div><!-- counter-box -->
                         </div><!-- .col -->
                     </div><!-- .milestones -->

@@ -27,9 +27,9 @@
 
                     <header class="entry-header d-flex flex-wrap justify-content-between align-items-center">
                         <div class="header-elements">
-                            <div class="posted-date">{{date('d M Y', $n->created_at->timestamp)}}</div>
+                            <div class="posted-date">{{date('d M Y', $announcements->created_at->timestamp)}}</div>
 
-                            <h2 class="entry-title"><a href="#">{{$n->judul}}</a></h2>
+                            <h2 class="entry-title"><a href="#">{{$announcements->judul}}</a></h2>
 
                             <div class="post-metas d-flex flex-wrap align-items-center">
                                 <span class="cat-links">in <a href="#">Announcements</a></span>
@@ -38,13 +38,12 @@
                     </header>
 
                     <div class="entry-content">
-                        <p>{!! nl2br(e($n->isi))!!}</p>
+                        <p>{!! nl2br(e($announcements->isi))!!}</p>
                     </div>
                 </div>
                 <hr>
             </div>
 
-            @include('layouts.sidebar');
         </div>
     </div>
 </div>

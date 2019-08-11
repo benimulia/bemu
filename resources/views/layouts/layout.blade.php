@@ -41,7 +41,7 @@
                         </div><!-- .header-bar-email -->
 
                         <div class="header-bar-text">
-                            <p>PHONE: <span>+62 882 1615 2324</span></p>
+                            <p>PHONE: <span>+62 822 7673 0207 </span></p>
                         </div><!-- .header-bar-text -->
                     </div><!-- .col -->
 
@@ -59,7 +59,7 @@
                 <div class="row">
                     <div class="col-12 d-flex flex-wrap justify-content-between align-items-center">
                         <div class="site-branding d-flex align-items-center">
-                           <a class="d-block" href="/" rel="home"><img class="d-block" height="30px" src="{{asset('images/BEMU.png')}}" alt="logo"></a>
+                           <a class="d-block" href="/" rel="home"><img class="d-block" height="30px" src="{{asset('images/bemu2.jpg')}}" alt="logo"></a>
                         </div><!-- .site-branding -->
 
                         @yield('nav')

@@ -33,19 +33,22 @@ class MainController extends Controller
     public function showNews($id){
         $n = news::Find($id);
         $announcements = announcements::orderBy('created_at','DESC')->take(3)->get();
-        return view('user.shownews', array('n' =>$n, 'announcements'=>$announcements));
+        $events = Calendar::orderBy('tanggalAwal','ASC')->get();
+        return view('user.shownews', array('n' =>$n, 'announcements'=>$announcements,'events' =>$events));
     }
 
     // FITUR ANNOUNCEMENT
     public function announcements()
     {
         $announcements = Announcements::orderBy('created_at','DESC')->paginate(3);
-        return view('user.announcements', array('announcements' =>$announcements, 'coba'=>$announcements));
+        $news = news::orderBy('created_at','DESC')->take(3)->get();
+        $events = Calendar::orderBy('tanggalAwal','ASC')->get();
+        return view('user.announcements', array('announcements' =>$announcements, 'coba'=>$announcements, 'events' =>$events, 'news' => $news));
     }
 
     public function showAnnouncements($id){
-        $n = announcements::Find($id);
-        return view('user.showannouncements',compact('n'));
+        $announcements = announcements::Find($id);
+        return view('user.showannouncements',compact('announcements'));
     }
 
     // FITUR EVENT

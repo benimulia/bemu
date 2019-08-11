@@ -123,12 +123,13 @@
         </div>
       </form>
             </div>
+            
 
             @include('layouts.sidebar')
         </div>
     </div>
 </div>
-
+<br><br>
 @endsection
 @section('scripting')
 <script type="text/javascript">
