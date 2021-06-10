@@ -24,6 +24,6 @@
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
-        "locutus": "^2.0.11"
+        "locutus": "^2.0.15"
     }
 }
